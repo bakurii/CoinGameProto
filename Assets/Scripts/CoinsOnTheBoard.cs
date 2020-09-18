@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class CoinsOnTheBoard : MonoBehaviour
 {
-    public Transform[] wayPoints1 = new Transform[6];
+    [SerializeField]
+    Transform[] waypointsList;
+
+
+    public float movementSpeed = 2f;
     public int wayPointIndex = 0;
 
     public Image kisu;
@@ -28,8 +32,14 @@ public class CoinsOnTheBoard : MonoBehaviour
     void InstantiatePrefab()
     {
         Debug.Log("Jjee button painettu!");
-        Instantiate(kisu);
+
+        Transform imagePath = GameObject.FindWithTag("Path").transform;
+        Instantiate(kisu, imagePath);        
     }
 
+    void MoveTroughWayPoints()
+    {
+
+    }
 
 }

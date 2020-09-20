@@ -18,7 +18,7 @@ public class CoinsOnTheBoard : MonoBehaviour
 
     void Start()
     {
-
+        //transform.position = waypointsList[wayPointIndex].transform.position;
         Button tButton = testButton.GetComponent<Button>();
         tButton.onClick.AddListener(InstantiatePrefab);
         
@@ -34,12 +34,17 @@ public class CoinsOnTheBoard : MonoBehaviour
         Debug.Log("Jjee button painettu!");
 
         Transform imagePath = GameObject.FindWithTag("Path").transform;
-        Instantiate(kisu, imagePath);        
+        Instantiate(kisu, imagePath);
+
+        MoveTroughWayPoints();
     }
 
     void MoveTroughWayPoints()
     {
-
+        //for(int i = 0; i >= 6; i++)
+        //{
+            kisu.transform.position = Vector2.MoveTowards(transform.position, waypointsList[wayPointIndex].transform.position, movementSpeed * Time.deltaTime);
+        //}
     }
 
 }

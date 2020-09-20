@@ -726,13 +726,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 390d25532378ee24cbf0fa007db9c2e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints1:
+  waypointsList:
   - {fileID: 1818993367}
   - {fileID: 628753053}
   - {fileID: 519687751}
   - {fileID: 1461845556}
   - {fileID: 1696939307}
   - {fileID: 1018858758}
+  movementSpeed: 2
   wayPointIndex: 0
   kisu: {fileID: 776176664354966747, guid: 7038eb75c5cba6641b412d8a9c51ff40, type: 3}
   playerPrefab: {fileID: 0}

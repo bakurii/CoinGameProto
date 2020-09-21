@@ -9,24 +9,37 @@ public class CoinsOnTheBoard : MonoBehaviour
     Transform[] waypointsList;
 
 
-    public float movementSpeed = 2f;
-    public int wayPointIndex = 0;
+    //public float movementSpeed = 2f;
+    public int wayPointIndex = 5;
+    private int loopNumber = 5;
+
+    public int testNum = 0;
 
     public Image kisu;
     public Transform playerPrefab;
-    public Button testButton;
+    public Button button0;
+    public Button button1;
 
     void Start()
     {
         //transform.position = waypointsList[wayPointIndex].transform.position;
-        Button tButton = testButton.GetComponent<Button>();
-        tButton.onClick.AddListener(InstantiatePrefab);
+        Button zeroButton = button0.GetComponent<Button>();
+        Button oneButton = button1.GetComponent<Button>();
+        zeroButton.onClick.AddListener(InstantiatePrefab);
+        oneButton.onClick.AddListener(InstantiatePrefab);
         
     }
 
     void Update()
     {
-        //Instantiate(playerPrefab);
+        
+    }
+
+    int testArrayNumber()
+    {
+
+
+        return testNum;
     }
 
     void InstantiatePrefab()
@@ -34,17 +47,15 @@ public class CoinsOnTheBoard : MonoBehaviour
         Debug.Log("Jjee button painettu!");
 
         Transform imagePath = GameObject.FindWithTag("Path").transform;
-        Instantiate(kisu, imagePath);
 
-        MoveTroughWayPoints();
+        for (int i = 5; i >= loopNumber; i--)
+        {
+            wayPointIndex = i;
+            Instantiate(kisu, waypointsList[wayPointIndex].transform.position, Quaternion.identity, imagePath);
+        }
+
+        loopNumber--;
     }
 
-    void MoveTroughWayPoints()
-    {
-        //for(int i = 0; i >= 6; i++)
-        //{
-            kisu.transform.position = Vector2.MoveTowards(transform.position, waypointsList[wayPointIndex].transform.position, movementSpeed * Time.deltaTime);
-        //}
-    }
 
 }

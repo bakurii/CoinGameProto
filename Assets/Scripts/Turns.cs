@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,15 +11,14 @@ public enum GameState { START, P1, P2, WIN, LOSE}
 public class Turns : MonoBehaviour
 {
     public GameState state;
-
-    // Start is called before the first frame update
+    public GameObject player1;
     void Start()
     {
+        player1 = GameObject.Find("Player1Coins");
         state = GameState.START;
         SetupStart();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -33,6 +33,9 @@ public class Turns : MonoBehaviour
 
     void Player1Turn()
     {
+        //Connection to Player1Coins script that has Coins on the board as a namespace.
+        
+
 
     }
 }

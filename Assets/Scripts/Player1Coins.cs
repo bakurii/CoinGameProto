@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CoinsOnTheBoard : MonoBehaviour
+public class Player1Coins : MonoBehaviour
 {
     //Every row has its own waypoint list.
     [SerializeField]
@@ -25,24 +25,23 @@ public class CoinsOnTheBoard : MonoBehaviour
     void Start()
     {
         //transform.position = waypointsList[wayPointIndex].transform.position;
+        
+        
+    }
+
+    void ButtonsEnabledOnTurn()
+    {
         Button zeroButton = button0.GetComponent<Button>();
         Button oneButton = button1.GetComponent<Button>();
-        zeroButton.interactable = true;
+
         zeroButton.onClick.AddListener(InstantiatePrefabZero);
         oneButton.onClick.AddListener(InstantiatePrefabOne);
-        
+        zeroButton.interactable = true;
     }
 
     void Update()
     {
         
-    }
-
-    int testArrayNumber()
-    {
-
-
-        return testNum;
     }
 
     void InstantiatePrefabZero()
